@@ -5,21 +5,34 @@ export const CATEGORIES = [
   // id, title, superCategory, active
 
   // categories
-  new Category(1, 'Lightning', null, true),
-  new Category(2, 'Electrical Material', null, true),
-  new Category(3, 'Electronics Components', null, true), //-
-  new Category(4, 'Accessories', null, true), //-
+  new Category(1, 'Lightning', null, true,
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'),
+  new Category(2, 'Electrical Material', null, true,
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'),
+  new Category(3, 'Electronics Components', null, true,
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  new Category(4, 'Accessories', null, true,
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'), //-
   // subcategories
-  new Category(5, 'Inside Lights', 1, true), //-
-  new Category(6, 'Outside Lights', 1, true), //-
-  new Category(7, 'LED', 1, true), //-
-  new Category(8, 'Sockets', 2, true),
-  new Category(9, 'Cables', 2, true),
+  new Category(5, 'Inside Lights', 1, true,
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'), //-
+  new Category(6, 'Outside Lights', 1, true,
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'), //-
+  new Category(7, 'LED', 1, true,
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  new Category(8, 'Sockets', 2, true,
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'),
+  new Category(9, 'Cables', 2, true,
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'),
   // subsubcategories
-  new Category(15, 'Socket Regular', 8, true), //-
-  new Category(16, 'Socket Special', 8, true), //-
-  new Category(17, 'Coaxial Cables', 9, true), //-
-  new Category(18, 'Multi-conductor Cables', 9, true), //-
+  new Category(15, 'Socket Regular', 8, true,
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  new Category(16, 'Socket Special', 8, true,
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'), //-
+  new Category(17, 'Coaxial Cables', 9, true,
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'), //-
+  new Category(18, 'Multi-conductor Cables', 9, true,
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'), //-
 ];
 
 export const PRODUCTS = [
