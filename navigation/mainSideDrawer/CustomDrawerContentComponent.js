@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
-import Colors from '../constants/Colors';
-import SideDrawerList from './SideDrawerList';
+import Colors from '../../constants/Colors';
+import SideDrawerList from './navigationLists/SideDrawerList';
 
 const CustomDrawerContentComponent = props => {
     return (

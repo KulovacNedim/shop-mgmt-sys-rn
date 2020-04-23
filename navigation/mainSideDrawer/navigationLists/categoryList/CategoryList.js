@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectCategory, selectCategory1 } from '../store/actions/categories';
-import ProductsOverviewScreen from '../screens/products/ProductsOverviewScreen';
+import { selectCategory, selectCategory1 } from '../../../../store/actions/categories';
+import * as navActions from '../../../../store/actions/navigation';
+import ProductsOverviewScreen from '../../../../screens/products/ProductsOverviewScreen';
 
-const NavList = props => {
+const CategoryList = props => {
 
     const [nav, setNav] = useState(false)
     const categories = useSelector(state => state.categories.subcategories);
@@ -53,6 +54,9 @@ const NavList = props => {
 
     return (
         <View>
+            <Button title="Back to main menu" onPress={() => {
+                dispatch(navActions.setView(""))
+            }} />
             {jup}
         </View>
     );
@@ -64,4 +68,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default NavList;
+export default CategoryList;

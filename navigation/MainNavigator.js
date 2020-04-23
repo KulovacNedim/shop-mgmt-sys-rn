@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
-import CustomDrawerContentComponent from './CustomDrawerContentComponent';
+import CustomDrawerContentComponent from './mainSideDrawer/CustomDrawerContentComponent';
 import CategoriesOverviewScreen from '../screens/products/CategoriesOverviewScreen';
 import IndexScreen from '../screens/IndexScreen';
 import ProductsOverviewScreen from '../screens/products/ProductsOverviewScreen';
