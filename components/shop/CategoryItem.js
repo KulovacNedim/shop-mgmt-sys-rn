@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
 
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 
 const CategoryItem = props => {
     let TouchableCmp = TouchableOpacity;
@@ -21,7 +21,7 @@ const CategoryItem = props => {
                             />
                         </View>
                         <View style={styles.info}>
-    <Text style={styles.title} numberOfLines={1} >{props.category.title} - {props.category.id}</Text>
+                            <Text style={styles.title} numberOfLines={1} >{props.category.title} - {props.category.id}</Text>
                         </View>
                     </View>
                 </TouchableCmp>
