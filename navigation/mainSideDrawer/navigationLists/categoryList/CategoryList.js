@@ -1,68 +1,62 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { selectCategory, selectCategory1 } from '../../../../store/actions/categories';
+import SideDrawerItem from '../../../navigationComponents/SideDrawerItem';
+import * as categoryActions from '../../../../store/actions/categories';
 import * as navActions from '../../../../store/actions/navigation';
-import ProductsOverviewScreen from '../../../../screens/products/ProductsOverviewScreen';
 
 const CategoryList = props => {
-
-    const [nav, setNav] = useState(false)
-    const categories = useSelector(state => state.categories.subcategories);
-
+    const categories = useSelector(state => state.categories.categories);
     const dispatch = useDispatch();
 
-    const handler = (id) => {
-        dispatch(selectCategory(id));
-        if (categories.length === 0) {
-            setNav(true)
+    const onSelectHandler = (category) => {
+        if (!category) {
+            dispatch(categoryActions.selectCategory(null));
+        }
+        else if (category.subcategories.length > 0) {
+            dispatch(categoryActions.selectCategory(category.category.id));
+        } else {
+            dispatch(categoryActions.selectCategory(null));
+            dispatch(navActions.setView(''));
+            props.navigation.navigate('ProductsOverview');
         }
     }
-     let jup = (
-        <View>
-         
 
-            <FlatList
-                data={categories}
-                keyExtractor={item => item.id.toString()}
-                renderItem={itemData => {
-                    return (
-                        <TouchableOpacity onPress={handler.bind(this, itemData.item.id)}>
-                            <View style={styles.item}>
-                                <Text>{itemData.item.title}</Text>
-                            </View>
-                        </TouchableOpacity>
-                    );
-                }}
-            />
-        </View>
-    );
-    useEffect(() => {
-        if (categories.length === 0) {
-            jup = null;
-            props.navigation.navigate('BLA');
-        }
-    }, [categories]);
 
-   
-    console.log('+9+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++   ' + categories.length)
-    // if (categories.length === 0) {
-    //     jup = null;
-    //     props.navigation.navigate('BLA');
-    // }
+    if (categories[0].category.superCategory) {
+        dispatch(navActions.setBackToAllCategories(true));
+    } else {
+        dispatch(navActions.setBackToAllCategories(false));
+    }
 
     return (
-        <View>
-            <Button title="Back to main menu" onPress={() => {
-                dispatch(navActions.setView(""))
-            }} />
-            {jup}
+        <View style={styles.container}>
+            <ScrollView>
+                {categories.map(category => {
+                    const item = {
+                        icon: category.category.icon || 'md-menu',
+                        itemTitle: category.category.title,
+                        route: '',
+                        hasSubNav: category.subcategories.length > 0
+                    }
+                    return (
+                        <SideDrawerItem
+                            {...props} item={item}
+                            onSelectRoute={onSelectHandler.bind(this, category)}
+                            key={category.category.id}
+                        />
+                    )
+                })}
+            </ScrollView>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
+    container: {
+        paddingLeft: 5
+    },
     item: {
         paddingVertical: 10
     }

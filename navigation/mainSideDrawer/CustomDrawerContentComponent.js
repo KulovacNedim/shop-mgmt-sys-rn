@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     headerAndContentContainer: {
-        flex: 8
+        flex: 9
     },
     headerContainer: {
         height: 80,

@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     listItemContainer: {
         flexDirection: 'row',
         height: 40,
-        marginVertical: 3
+        marginVertical: 3,
+        width: '100%'
     },
     listItemIcon: {
         paddingHorizontal: 10,
@@ -49,10 +50,12 @@ const styles = StyleSheet.create({
     },
     listItemTitleContainer: {
         paddingLeft: 5,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     listItemTitle: {
-        fontSize: 14
+        fontFamily: 'semi-bold',
+        fontSize: 15
     },
     activeTitle: {
         color: Colors.accent

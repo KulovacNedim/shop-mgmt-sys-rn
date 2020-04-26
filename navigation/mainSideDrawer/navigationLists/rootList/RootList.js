@@ -14,7 +14,7 @@ const RootList = props => {
         { icon: 'md-person', itemTitle: 'Your Account', route: '', hasSubNav: false },
         { icon: 'md-mail', itemTitle: 'E-Mail', route: '', hasSubNav: false }
     ];
-    // route property has to be equal to active route name in main navigator
+    // route property has to be equal to active route name in main navigatorb
 
     const dispatch = useDispatch();
 
@@ -39,8 +39,7 @@ const RootList = props => {
 
 const styles = StyleSheet.create({
     listContainer: {
-        alignContent: 'center',
-        paddingLeft: 5
+        alignContent: 'center'
     }
 });
 
