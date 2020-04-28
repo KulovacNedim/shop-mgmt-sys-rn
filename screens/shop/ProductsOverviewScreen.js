@@ -52,12 +52,6 @@ const ProductsOverviewScreen = props => {
                     showModal={showModal}
                     item={selectedCartItem}
                     onCloseModal={() => setShowModal(!showModal)}
-                    qtyInc={() => {
-                        dispatch(cartActions.addToCart(selectedCartItem.product, selectedCartItem.cartQuantity + 1));
-                    }}
-                    qtyDec={() => {
-                        dispatch(cartActions.addToCart(selectedCartItem.product, selectedCartItem.cartQuantity - 1));
-                    }}
                 />
                 : null
             }

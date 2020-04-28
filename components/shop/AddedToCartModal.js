@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Button, Modal, StyleSheet, Image } from 'react-native';
+import { useDispatch } from 'react-redux';
+
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import * as cartActions from '../../store/actions/cart';
 
 const AddedToCartModal = props => {
+    const [warning, setWarning] = useState({ isWarning: false, msg: '' });
+    const dispatch = useDispatch();
+
+    let warningMsg;
+    if (warning.isWarning) {
+        warningMsg = <Text>{warning.msg}</Text>
+    }
+
+    const onQtyIncHandler = () => {
+        let inStockQty = props.item.product.quantity;
+        let cartQty = props.item.cartQuantity;
+        if (inStockQty === cartQty) {
+            setWarning({
+                isWarning: true,
+                msg: 'There is ' + inStockQty + ' pieces in stock.'
+            });
+            return;
+        }
+        setWarning({ isWarning: false, msg: '' });
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity + 1));
+    };
+
+    const onQtyDecHandler = () => {
+        let cartQty = props.item.cartQuantity;
+        if (cartQty === 1) {
+            setWarning({
+                isWarning: true,
+                msg: 'You cannot order less than 1 artical. If you want to remove it from the cart click on remove button.'
+            });
+            return;
+        }
+        setWarning({ isWarning: false, msg: '' });
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity - 1));
+    };
+
     return (
         <Modal
             animationType="slide"
@@ -23,13 +61,14 @@ const AddedToCartModal = props => {
                             <Text style={styles.descItems}>{props.item.product.price}</Text>
                             <View style={styles.quantityControl}>
                                 <View style={styles.btnContent}>
-                                    <Button title="-" style={styles.button} onPress={props.qtyDec}/>
+                                    <Button title="-" style={styles.button} onPress={onQtyDecHandler} />
                                 </View>
                                 <Text style={styles.qtyField}>{props.item.cartQuantity}</Text>
                                 <View style={styles.btnContent}>
-                                    <Button title="+" style={styles.button} onPress={props.qtyInc}/>
+                                    <Button title="+" style={styles.button} onPress={onQtyIncHandler} />
                                 </View>
                             </View>
+                            {warningMsg}
                         </View>
                     </View>
                     <View style={styles.confirm}>
