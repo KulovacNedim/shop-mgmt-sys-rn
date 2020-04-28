@@ -4,17 +4,16 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 import CustomDrawerContentComponent from './mainSideDrawer/CustomDrawerContentComponent';
-import CategoriesOverviewScreen from '../screens/products/CategoriesOverviewScreen';
 import IndexScreen from '../screens/IndexScreen';
-import ProductsOverviewScreen from '../screens/products/ProductsOverviewScreen';
+import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
+import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import Colors from '../constants/Colors';
-
 
 const ShopNavigator = createStackNavigator(
     {
         Index: IndexScreen,
-        CategoriesOverview: CategoriesOverviewScreen,
-        ProductsOverview: ProductsOverviewScreen
+        ProductsOverview: ProductsOverviewScreen,
+        ProductDetail: ProductDetailScreen
     },
     {
         defaultNavigationOptions: {

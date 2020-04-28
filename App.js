@@ -7,12 +7,14 @@ import * as Font from 'expo-font';
 import MainNavigator from './navigation/MainNavigator';
 import categoriesReducer from './store/reducers/categories';
 import productsReducer from './store/reducers/products';
+import cartReducer from './store/reducers/cart';
 import navigationReducer from './store/reducers/navigation';
 
 const rootReducer = combineReducers({
   navigation: navigationReducer,
   categories: categoriesReducer,
-  products: productsReducer
+  products: productsReducer,
+  cart: cartReducer
 });
 
 const store = createStore(rootReducer);

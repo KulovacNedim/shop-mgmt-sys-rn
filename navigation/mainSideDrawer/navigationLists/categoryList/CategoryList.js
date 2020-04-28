@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import SideDrawerItem from '../../../navigationComponents/SideDrawerItem';
 import * as categoryActions from '../../../../store/actions/categories';
 import * as navActions from '../../../../store/actions/navigation';
+import * as prodActions from '../../../../store/actions/products';
 
 const CategoryList = props => {
     const categories = useSelector(state => state.categories.categories);
@@ -17,9 +18,13 @@ const CategoryList = props => {
         else if (category.subcategories.length > 0) {
             dispatch(categoryActions.selectCategory(category.category.id));
         } else {
+            dispatch(prodActions.getProductsForCategory(category.category.id));
             dispatch(categoryActions.selectCategory(null));
             dispatch(navActions.setView(''));
-            props.navigation.navigate('ProductsOverview');
+            props.navigation.navigate('ProductsOverview', {
+                categoryTitle: category.category.title
+            });
+            props.navigation.closeDrawer();
         }
     }
 
