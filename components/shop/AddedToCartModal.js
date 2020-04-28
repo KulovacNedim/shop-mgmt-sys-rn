@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Modal, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, Modal, StyleSheet, Image } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const AddedToCartModal = props => {
@@ -12,22 +12,22 @@ const AddedToCartModal = props => {
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
                     <View style={styles.headerContainer}>
-                        <Text style={styles.headerText}><Text style={styles.boldText}>{props.product.title}</Text> added to the Cart:</Text>
+                        <Text style={styles.headerText}><Text style={styles.boldText}>{props.item.product.title}</Text> added to the Cart:</Text>
                     </View>
                     <View style={styles.content}>
                         <View style={styles.imageContainer}>
-                            <Image source={{ uri: props.product.imageUrl }} style={styles.image} />
+                            <Image source={{ uri: props.item.product.imageUrl }} style={styles.image} />
                         </View>
                         <View style={styles.descContainer}>
-                            <Text style={styles.descItems}>{props.product.title}</Text>
-                            <Text style={styles.descItems}>{props.product.price}</Text>
+                            <Text style={styles.descItems}>{props.item.product.title}</Text>
+                            <Text style={styles.descItems}>{props.item.product.price}</Text>
                             <View style={styles.quantityControl}>
                                 <View style={styles.btnContent}>
-                                    <Button title="-" style={styles.button} />
+                                    <Button title="-" style={styles.button} onPress={props.qtyDec}/>
                                 </View>
-                                <Text style={styles.qtyField}>12</Text>
+                                <Text style={styles.qtyField}>{props.item.cartQuantity}</Text>
                                 <View style={styles.btnContent}>
-                                    <Button title="+" style={styles.button} />
+                                    <Button title="+" style={styles.button} onPress={props.qtyInc}/>
                                 </View>
                             </View>
                         </View>

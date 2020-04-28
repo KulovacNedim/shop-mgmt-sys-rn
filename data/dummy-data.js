@@ -45,8 +45,7 @@ export const PRODUCTS = [
     9.99,
     15,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    3,
-    false
+    3
   ),
   new Product(
     2,
@@ -56,8 +55,7 @@ export const PRODUCTS = [
     15.99,
     25,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    3,
-    false
+    3
   ),
   new Product(
     3,
@@ -67,8 +65,7 @@ export const PRODUCTS = [
     15.99,
     25,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    3,
-    false
+    3
   ),
   new Product(
     4,
@@ -78,8 +75,7 @@ export const PRODUCTS = [
     50,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    4,
-    false
+    4
   ),
   new Product(
     5,
@@ -89,8 +85,7 @@ export const PRODUCTS = [
     9.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    4,
-    false
+    4
   ),
   new Product(
     6,
@@ -100,8 +95,7 @@ export const PRODUCTS = [
     99.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    5,
-    false
+    5
   ),
   new Product(
     7,
@@ -111,8 +105,7 @@ export const PRODUCTS = [
     199.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    6,
-    false
+    6
   ),
   new Product(
     8,
@@ -122,8 +115,7 @@ export const PRODUCTS = [
     5.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    15,
-    false
+    15
   ),
   new Product(
     9,
@@ -133,8 +125,7 @@ export const PRODUCTS = [
     7.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    15,
-    false
+    15
   ),
   new Product(
     10,
@@ -144,8 +135,7 @@ export const PRODUCTS = [
     17.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    16,
-    false
+    16
   ),
   new Product(
     11,
@@ -155,8 +145,7 @@ export const PRODUCTS = [
     21.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    16,
-    false
+    16
   ),
   new Product(
     12,
@@ -166,8 +155,7 @@ export const PRODUCTS = [
     121.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    17,
-    false
+    17
   ),
   new Product(
     13,
@@ -177,8 +165,7 @@ export const PRODUCTS = [
     199.99,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    17,
-    false
+    17
   ),
   new Product(
     14,
@@ -188,8 +175,7 @@ export const PRODUCTS = [
     300,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    18,
-    false
+    18
   ),
   new Product(
     15,
@@ -199,8 +185,7 @@ export const PRODUCTS = [
     400,
     5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
-    18,
-    false
+    18
   )
 ];
 

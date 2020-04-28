@@ -16,7 +16,12 @@ export default (state = initialState, action) => {
                 ...state,
                 items: { ...state.items, [product.id]: newCartItem },
                 totalAmount: state.totalAmount + (product.price * action.quantity),
-                selectedItem: product
+                selectedItem: newCartItem
+            };
+        case cartActions.SELECT_ITEM:
+            return {
+                ...state,
+                selectedItem: action.item
             };
         default:
             return state;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, Button, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import { useSelector } from 'react-redux';
 import Colors from '../../constants/Colors';
 
 const ProductItem = props => {
@@ -21,7 +22,7 @@ const ProductItem = props => {
                         </View>
                         <View style={styles.actions}>
                             <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title="View Details" onPress={props.onViewDetail} />
-                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title={props.prod.isInCart ? "In Cart" : "Add to Cart"} onPress={props.onAddToCart} />
+                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title={props.isInCart ? "In Cart" : "Add to Cart"} onPress={props.onAddToCart} />
                         </View>
                     </View>
                 </TouchableCmp>

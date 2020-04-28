@@ -7,13 +7,25 @@ import HeaderButton from '../../components/UI/HeaderButton';
 import ProductItem from '../../components/shop/ProductItem';
 import AddedToCartModal from '../../components/shop/AddedToCartModal';
 import * as cartActions from '../../store/actions/cart';
-import * as productActions from '../../store/actions/products';
 
 const ProductsOverviewScreen = props => {
     const products = useSelector(state => state.products.products);
-    const product = useSelector(state => state.cart.selectedItem);
+    const selectedCartItem = useSelector(state => state.cart.selectedItem);
+    const cartItems = useSelector(state => state.cart.items);
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
+
+    const onAddToCart = (itemData) => {
+        if (cartItems.hasOwnProperty(itemData.item.id)) {
+            // item is already in the cart
+            dispatch(cartActions.selectItem(cartItems[itemData.item.id]));
+        } else {
+            // item is not in the cart, add one
+            dispatch(cartActions.addToCart(itemData.item, 1));
+        }
+        setShowModal(true);
+    };
+
     return (
         <View>
             <FlatList
@@ -23,24 +35,30 @@ const ProductsOverviewScreen = props => {
                     return (
                         <ProductItem
                             prod={itemData.item}
+                            isInCart={cartItems.hasOwnProperty(itemData.item.id)}
                             onViewDetail={() => {
                                 props.navigation.navigate('ProductDetail', {
                                     prodId: itemData.item.id,
                                     title: itemData.item.title
                                 });
                             }}
-                            onAddToCart={() => {
-                                dispatch(productActions.updateProduct(itemData.item, 'isInCart', true));
-                                dispatch(cartActions.addToCart(itemData.item, 1));
-                                
-                                setShowModal(true);
-                            }}
+                            onAddToCart={onAddToCart.bind(this, itemData)}
                         />
                     );
                 }}
             />
             {showModal ?
-                <AddedToCartModal showModal={showModal} product={product} onCloseModal={() => setShowModal(!showModal)} />
+                <AddedToCartModal
+                    showModal={showModal}
+                    item={selectedCartItem}
+                    onCloseModal={() => setShowModal(!showModal)}
+                    qtyInc={() => {
+                        dispatch(cartActions.addToCart(selectedCartItem.product, selectedCartItem.cartQuantity + 1));
+                    }}
+                    qtyDec={() => {
+                        dispatch(cartActions.addToCart(selectedCartItem.product, selectedCartItem.cartQuantity - 1));
+                    }}
+                />
                 : null
             }
         </View>
