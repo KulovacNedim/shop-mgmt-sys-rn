@@ -21,7 +21,9 @@ const CategoryList = props => {
             dispatch(prodActions.getProductsForCategory(category.category.id));
             dispatch(categoryActions.selectCategory(null));
             dispatch(navActions.setView(''));
-            props.navigation.navigate('ProductsOverview');
+            props.navigation.navigate('ProductsOverview', {
+                categoryTitle: category.category.title
+            });
             props.navigation.closeDrawer();
         }
     }

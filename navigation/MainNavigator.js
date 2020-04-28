@@ -6,12 +6,14 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import CustomDrawerContentComponent from './mainSideDrawer/CustomDrawerContentComponent';
 import IndexScreen from '../screens/IndexScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
+import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import Colors from '../constants/Colors';
 
 const ShopNavigator = createStackNavigator(
     {
         Index: IndexScreen,
-        ProductsOverview: ProductsOverviewScreen
+        ProductsOverview: ProductsOverviewScreen,
+        ProductDetail: ProductDetailScreen
     },
     {
         defaultNavigationOptions: {
