@@ -23,7 +23,7 @@ const ProductDetailScreen = props => {
                     if (isInCart) {
                         dispatch(cartActions.selectItem(cartItems[product.id]));
                     } else {
-                        dispatch(cartActions.addToCart(product, 1));
+                        dispatch(cartActions.addToCart(product, 1, '+'));
                     }
                     setShowModal(true);
                     setShowModal(true);

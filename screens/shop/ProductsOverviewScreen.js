@@ -21,7 +21,7 @@ const ProductsOverviewScreen = props => {
             dispatch(cartActions.selectItem(cartItems[itemData.item.id]));
         } else {
             // item is not in the cart, add one
-            dispatch(cartActions.addToCart(itemData.item, 1));
+            dispatch(cartActions.addToCart(itemData.item, 1, '+'));
         }
         setShowModal(true);
     };
@@ -70,6 +70,16 @@ ProductsOverviewScreen.navigationOptions = navData => {
                     iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
                     onPress={() => {
                         navData.navigation.toggleDrawer();
+                    }} />
+            </HeaderButtons>
+        ),
+        headerRight: () => (
+            <HeaderButtons HeaderButtonComponent={HeaderButton}>
+                <Item
+                    title="Cart"
+                    iconName={Platform.OS === 'android' ? 'md-cart' : 'ios-cart'}
+                    onPress={() => {
+                        navData.navigation.navigate('Cart');
                     }} />
             </HeaderButtons>
         )

@@ -7,13 +7,15 @@ import CustomDrawerContentComponent from './mainSideDrawer/CustomDrawerContentCo
 import IndexScreen from '../screens/IndexScreen';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
+import CartScreen from '../screens/shop/CartScreen';
 import Colors from '../constants/Colors';
 
 const ShopNavigator = createStackNavigator(
     {
         Index: IndexScreen,
         ProductsOverview: ProductsOverviewScreen,
-        ProductDetail: ProductDetailScreen
+        ProductDetail: ProductDetailScreen,
+        Cart: CartScreen
     },
     {
         defaultNavigationOptions: {

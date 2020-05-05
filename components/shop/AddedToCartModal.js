@@ -25,7 +25,7 @@ const AddedToCartModal = props => {
             return;
         }
         setWarning({ isWarning: false, msg: '' });
-        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity + 1));
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity + 1, '+'));
     };
 
     const onQtyDecHandler = () => {
@@ -38,7 +38,7 @@ const AddedToCartModal = props => {
             return;
         }
         setWarning({ isWarning: false, msg: '' });
-        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity - 1));
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity - 1, '-'));
     };
 
     return (

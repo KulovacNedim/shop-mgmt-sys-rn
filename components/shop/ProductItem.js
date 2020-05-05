@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 import Colors from '../../constants/Colors';
 
 const ProductItem = props => {
+    const cartItems = useSelector(state => state.cart.items);
+    const isInCart = cartItems.hasOwnProperty(props.prod.id);
+
     let TouchableCmp = TouchableOpacity;
     if (Platform.OS === 'android' && Platform.Version >= 21) {
         TouchableCmp === TouchableNativeFeedback;
@@ -22,7 +25,7 @@ const ProductItem = props => {
                         </View>
                         <View style={styles.actions}>
                             <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title="View Details" onPress={props.onViewDetail} />
-                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title={props.isInCart ? "In Cart" : "Add to Cart"} onPress={props.onAddToCart} />
+                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title={isInCart ? "In Cart" : "Add to Cart"} onPress={props.onAddToCart} />
                         </View>
                     </View>
                 </TouchableCmp>
