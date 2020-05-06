@@ -9,7 +9,7 @@ import * as SelectView from '../../SelectViewConstants';
 const RootList = props => {
     const items = [
         { icon: 'md-home', itemTitle: 'Home', route: 'Index', hasSubNav: false },
-        { icon: 'md-list', itemTitle: 'Your Orders', route: 'ProductsOverview', hasSubNav: false },
+        { icon: 'md-list', itemTitle: 'Your Orders', route: 'Orders', hasSubNav: false },
         { icon: 'md-reorder', itemTitle: 'Products Categories', route: '', hasSubNav: true },
         { icon: 'md-person', itemTitle: 'Your Account', route: '', hasSubNav: false },
         { icon: 'md-mail', itemTitle: 'E-Mail', route: '', hasSubNav: false }

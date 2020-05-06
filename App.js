@@ -8,13 +8,15 @@ import MainNavigator from './navigation/MainNavigator';
 import categoriesReducer from './store/reducers/categories';
 import productsReducer from './store/reducers/products';
 import cartReducer from './store/reducers/cart';
+import orderReducer from './store/reducers/order';
 import navigationReducer from './store/reducers/navigation';
 
 const rootReducer = combineReducers({
   navigation: navigationReducer,
   categories: categoriesReducer,
   products: productsReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  orders: orderReducer
 });
 
 const store = createStore(rootReducer);

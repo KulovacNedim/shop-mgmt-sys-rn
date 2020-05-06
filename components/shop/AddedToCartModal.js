@@ -1,8 +1,46 @@
-import React from 'react';
-import { View, Text, Button, Modal, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Button, Modal, StyleSheet, Image } from 'react-native';
+import { useDispatch } from 'react-redux';
+
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import * as cartActions from '../../store/actions/cart';
 
 const AddedToCartModal = props => {
+    const [warning, setWarning] = useState({ isWarning: false, msg: '' });
+    const dispatch = useDispatch();
+
+    let warningMsg;
+    if (warning.isWarning) {
+        warningMsg = <Text>{warning.msg}</Text>
+    }
+
+    const onQtyIncHandler = () => {
+        let inStockQty = props.item.product.quantity;
+        let cartQty = props.item.cartQuantity;
+        if (inStockQty === cartQty) {
+            setWarning({
+                isWarning: true,
+                msg: 'There is ' + inStockQty + ' pieces in stock.'
+            });
+            return;
+        }
+        setWarning({ isWarning: false, msg: '' });
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity + 1, '+'));
+    };
+
+    const onQtyDecHandler = () => {
+        let cartQty = props.item.cartQuantity;
+        if (cartQty === 1) {
+            setWarning({
+                isWarning: true,
+                msg: 'You cannot order less than 1 artical. If you want to remove it from the cart click on remove button.'
+            });
+            return;
+        }
+        setWarning({ isWarning: false, msg: '' });
+        dispatch(cartActions.addToCart(props.item.product, props.item.cartQuantity - 1, '-'));
+    };
+
     return (
         <Modal
             animationType="slide"
@@ -12,24 +50,25 @@ const AddedToCartModal = props => {
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
                     <View style={styles.headerContainer}>
-                        <Text style={styles.headerText}><Text style={styles.boldText}>{props.product.title}</Text> added to the Cart:</Text>
+                        <Text style={styles.headerText}><Text style={styles.boldText}>{props.item.product.title}</Text> added to the Cart:</Text>
                     </View>
                     <View style={styles.content}>
                         <View style={styles.imageContainer}>
-                            <Image source={{ uri: props.product.imageUrl }} style={styles.image} />
+                            <Image source={{ uri: props.item.product.imageUrl }} style={styles.image} />
                         </View>
                         <View style={styles.descContainer}>
-                            <Text style={styles.descItems}>{props.product.title}</Text>
-                            <Text style={styles.descItems}>{props.product.price}</Text>
+                            <Text style={styles.descItems}>{props.item.product.title}</Text>
+                            <Text style={styles.descItems}>{props.item.product.price}</Text>
                             <View style={styles.quantityControl}>
                                 <View style={styles.btnContent}>
-                                    <Button title="-" style={styles.button} />
+                                    <Button title="-" style={styles.button} onPress={onQtyDecHandler} />
                                 </View>
-                                <Text style={styles.qtyField}>12</Text>
+                                <Text style={styles.qtyField}>{props.item.cartQuantity}</Text>
                                 <View style={styles.btnContent}>
-                                    <Button title="+" style={styles.button} />
+                                    <Button title="+" style={styles.button} onPress={onQtyIncHandler} />
                                 </View>
                             </View>
+                            {warningMsg}
                         </View>
                     </View>
                     <View style={styles.confirm}>
