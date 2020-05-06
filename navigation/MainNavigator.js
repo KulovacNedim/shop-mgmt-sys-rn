@@ -4,37 +4,51 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 
 import CustomDrawerContentComponent from './mainSideDrawer/CustomDrawerContentComponent';
-import CategoriesOverviewScreen from '../screens/products/CategoriesOverviewScreen';
 import IndexScreen from '../screens/IndexScreen';
-import ProductsOverviewScreen from '../screens/products/ProductsOverviewScreen';
+import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
+import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
+import CartScreen from '../screens/shop/CartScreen';
+import OrdersScreen from '../screens/shop/OrdersScreen';
 import Colors from '../constants/Colors';
 
+const defaultNavOptions = {
+    headerStyle: {
+        backgroundColor: Colors.primary
+    },
+    headerTintStyle: {
+        fontFamily: 'semi-bold'
+    },
+    headerBackTitleStyle: {
+        fontFamily: 'semi-bold'
+    },
+    headerTintColor: 'white'
+};
 
 const ShopNavigator = createStackNavigator(
     {
         Index: IndexScreen,
-        CategoriesOverview: CategoriesOverviewScreen,
-        ProductsOverview: ProductsOverviewScreen
+        ProductsOverview: ProductsOverviewScreen,
+        ProductDetail: ProductDetailScreen,
+        Cart: CartScreen
     },
     {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: Colors.primary
-            },
-            headerTintStyle: {
-                fontFamily: 'semi-bold'
-            },
-            headerBackTitleStyle: {
-                fontFamily: 'semi-bold'
-            },
-            headerTintColor: 'white'
-        }
+        defaultNavigationOptions: defaultNavOptions
+    }
+);
+
+const OrdersNavigator = createStackNavigator(
+    {
+        Orders: OrdersScreen
+    },
+    {
+        defaultNavigationOptions: defaultNavOptions
     }
 );
 
 const SideDrawer = createDrawerNavigator(
     {
         Shop: ShopNavigator,
+        Orders: OrdersNavigator,
         CustomDrawerContentComponent: CustomDrawerContentComponent
     },
     {

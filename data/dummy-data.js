@@ -6,33 +6,33 @@ export const CATEGORIES = [
 
   // categories
   new Category(1, 'Lightning', null, true,
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'),
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU', ''),
   new Category(2, 'Electrical Material', null, true,
-  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'),
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png', ''),
   new Category(3, 'Electronics Components', null, true,
-  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png', ''), //-
   new Category(4, 'Accessories', null, true,
-  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'), //-
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg', ''), //-
   // subcategories
   new Category(5, 'Inside Lights', 1, true,
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'), //-
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU', ''), //-
   new Category(6, 'Outside Lights', 1, true,
-  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'), //-
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png', ''), //-
   new Category(7, 'LED', 1, true,
-  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png', ''), //-
   new Category(8, 'Sockets', 2, true,
-  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'),
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg', ''),
   new Category(9, 'Cables', 2, true,
-  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'),
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png', ''),
   // subsubcategories
   new Category(15, 'Socket Regular', 8, true,
-  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png'), //-
+  'https://www.solidsoft.hr/wp-content/uploads/2015/07/electric.png', ''), //-
   new Category(16, 'Socket Special', 8, true,
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU'), //-
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRiziQogimtJLxP0eODB5W3VRqyrBvsEHpReejOnJkFq42ycZ9H&usqp=CAU', ''), //-
   new Category(17, 'Coaxial Cables', 9, true,
-  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg'), //-
+  'https://thumbs.dreamstime.com/z/electricity-logo-electric-icon-vector-design-template-plug-creative-concept-lightning-power-energy-element-electrical-159049010.jpg', ''), //-
   new Category(18, 'Multi-conductor Cables', 9, true,
-  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png'), //-
+  'https://miro.medium.com/max/2000/1*6QsLjpU-nDJTjNoxY-qLeg.png', ''), //-
 ];
 
 export const PRODUCTS = [
@@ -73,6 +73,7 @@ export const PRODUCTS = [
     'Electronic Accessory Part 1',
     'https://images-na.ssl-images-amazon.com/images/I/81Wsg3whCfL._AC_SX466_.jpg',
     50,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     4
   ),
@@ -82,6 +83,7 @@ export const PRODUCTS = [
     'Electronic Accessory Part 2',
     'https://images-eu.ssl-images-amazon.com/images/I/71LW32PfEOL._AC_SS350_.jpg',
     9.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     4
   ),
@@ -91,6 +93,7 @@ export const PRODUCTS = [
     'Inside lightning system',
     'https://www.energy.gov/sites/prod/files/styles/open_graph_image/public/lights_leds_hires.jpg?itok=8BhUtlsv',
     99.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     5
   ),
@@ -100,6 +103,7 @@ export const PRODUCTS = [
     'Outside lightning system',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR48OXNk_fYc3_b8dWIjpAmwV-zIqWxnB7sGNusX8OzjGu74oIu&usqp=CAU',
     199.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     6
   ),
@@ -109,6 +113,7 @@ export const PRODUCTS = [
     'Socket Regular 1',
     'http://www.elektroprizma.ba/elektromaterijal/uticnice-prekidaci-mikro/ek3.jpg',
     5.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     15
   ),
@@ -118,6 +123,7 @@ export const PRODUCTS = [
     'Socket Regular 2',
     'http://www.elektroprizma.ba/elektromaterijal/uticnice-prekidaci-mikro/ek1.jpg',
     7.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     15
   ),
@@ -127,6 +133,7 @@ export const PRODUCTS = [
     'Socket Special 1',
     'http://www.elektroprizma.ba/elektromaterijal/uticnice-prekidaci-mikro/ek5.jpg',
     17.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     16
   ),
@@ -136,6 +143,7 @@ export const PRODUCTS = [
     'Socket Special 2',
     'http://www.elektroprizma.ba/elektromaterijal/uticnice-prekidaci-mikro/ek2.jpg',
     21.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     16
   ),
@@ -145,6 +153,7 @@ export const PRODUCTS = [
     'Coaxial Cables 100',
     'https://ae01.alicdn.com/kf/HTB1G8yBclGE3KVjSZFhq6AkaFXaM/Male-SMA-Plug-To-Female-TS9-Jack-Adapter-RF-Antenna-Coax-Cable-15cm.jpg_q50.jpg',
     121.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     17
   ),
@@ -154,6 +163,7 @@ export const PRODUCTS = [
     'Coaxial Cables 500',
     'https://www.eurodk.ee/images/catalogue/1827/lmr400_2.jpg',
     199.99,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     17
   ),
@@ -163,6 +173,7 @@ export const PRODUCTS = [
     'Multi-conductor Cable 100',
     'https://image.made-in-china.com/202f0j00ugCUSFpBLckJ/Rvv-5-Core-Multi-Conductor-Cable-Electrical-Wire-for-Sale.jpg',
     300,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     18
   ),
@@ -172,6 +183,7 @@ export const PRODUCTS = [
     'Multi-conductor Cable 500',
     'https://p.globalsources.com/IMAGES/PDT/BIG/646/B1078216646.jpg',
     400,
+    5,
     'Super cool electronic component for some super cool lightening. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
     18
   )
