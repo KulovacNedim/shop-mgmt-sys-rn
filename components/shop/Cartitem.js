@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import * as cartActions from '../../store/actions/cart';
 
-export const CartItem = props => {
+const CartItem = props => {
     const [warning, setWarning] = useState({ isWarning: false, msg: '' });
     const dispatch = useDispatch();
 

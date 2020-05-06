@@ -1,4 +1,5 @@
 import * as cartActions from '../actions/cart';
+import { ADD_ORDER } from '../actions/order';
 import CartItem from '../../models/cart-item';
 
 const initialState = {
@@ -24,17 +25,19 @@ export default (state = initialState, action) => {
                 ...state,
                 selectedItem: action.item
             };
-            case cartActions.REMOVE_FROM_CART:
-                const productId = action.productId;
-                const updatedItems = {...state.items};
-                delete updatedItems[productId];
+        case cartActions.REMOVE_FROM_CART:
+            const productId = action.productId;
+            const updatedItems = { ...state.items };
+            delete updatedItems[productId];
 
-                const updatedAmount = state.totalAmount - (state.items[productId].product.price * state.items[productId].cartQuantity);
-                return{
-                    ...state,
-                    items: updatedItems,
-                    totalAmount: updatedAmount
-                };
+            const updatedAmount = state.totalAmount - (state.items[productId].product.price * state.items[productId].cartQuantity);
+            return {
+                ...state,
+                items: updatedItems,
+                totalAmount: updatedAmount
+            };
+        case ADD_ORDER:
+            return initialState;
         default:
             return state;
     }
