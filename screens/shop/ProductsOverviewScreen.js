@@ -47,13 +47,12 @@ const ProductsOverviewScreen = props => {
                     );
                 }}
             />
-            {showModal ?
+            {showModal &&
                 <AddedToCartModal
                     showModal={showModal}
                     item={selectedCartItem}
                     onCloseModal={() => setShowModal(!showModal)}
                 />
-                : null
             }
         </View>
     );
