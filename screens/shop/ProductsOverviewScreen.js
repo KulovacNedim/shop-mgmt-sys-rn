@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
@@ -7,6 +7,7 @@ import HeaderButton from '../../components/UI/HeaderButton';
 import ProductItem from '../../components/shop/ProductItem';
 import AddedToCartModal from '../../components/shop/AddedToCartModal';
 import * as cartActions from '../../store/actions/cart';
+import Colors from '../../constants/Colors';
 
 const ProductsOverviewScreen = props => {
     const products = useSelector(state => state.products.products);
@@ -15,7 +16,7 @@ const ProductsOverviewScreen = props => {
     const [showModal, setShowModal] = useState(false);
     const dispatch = useDispatch();
 
-    const onAddToCart = (itemData) => {
+    const onAddToCartHandler = (itemData) => {
         if (cartItems.hasOwnProperty(itemData.item.id)) {
             // item is already in the cart
             dispatch(cartActions.selectItem(cartItems[itemData.item.id]));
@@ -24,6 +25,13 @@ const ProductsOverviewScreen = props => {
             dispatch(cartActions.addToCart(itemData.item, 1, '+'));
         }
         setShowModal(true);
+    };
+
+    const onViewDetail = product => {
+        props.navigation.navigate('ProductDetail', {
+            prodId: product.id,
+            title: product.title
+        });
     };
 
     return (
@@ -35,15 +43,19 @@ const ProductsOverviewScreen = props => {
                     return (
                         <ProductItem
                             prod={itemData.item}
-                            isInCart={cartItems.hasOwnProperty(itemData.item.id)}
-                            onViewDetail={() => {
-                                props.navigation.navigate('ProductDetail', {
-                                    prodId: itemData.item.id,
-                                    title: itemData.item.title
-                                });
-                            }}
-                            onAddToCart={onAddToCart.bind(this, itemData)}
-                        />
+                            onCardPress={onViewDetail.bind(this, itemData.item)}
+                        >
+                            <Button
+                                color={Platform.OS === 'android' ? Colors.accent : Colors.primary}
+                                title="View Details"
+                                onPress={onViewDetail.bind(this, itemData.item)}
+                            />
+                            <Button
+                                color={Platform.OS === 'android' ? Colors.accent : Colors.primary}
+                                title={cartItems.hasOwnProperty(itemData.item.id) ? "In Cart" : "Add to Cart"}
+                                onPress={onAddToCartHandler.bind(this, itemData)}
+                            />
+                        </ProductItem>
                     );
                 }}
             />
