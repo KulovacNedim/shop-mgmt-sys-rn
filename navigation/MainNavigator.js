@@ -9,6 +9,8 @@ import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import CartScreen from '../screens/shop/CartScreen';
 import OrdersScreen from '../screens/shop/OrdersScreen';
+import AdminProductsScreen from '../screens/admin/AdminProductsScreen';
+import EditProductScreen from '../screens/admin/EditProductScreen';
 import Colors from '../constants/Colors';
 
 const defaultNavOptions = {
@@ -45,10 +47,22 @@ const OrdersNavigator = createStackNavigator(
     }
 );
 
+const AdminNavigator = createStackNavigator(
+    {
+        AdminProducts: AdminProductsScreen,
+        ProductDetail: ProductDetailScreen,
+        EditProduct: EditProductScreen
+    },
+    {
+        defaultNavigationOptions: defaultNavOptions
+    }
+);
+
 const SideDrawer = createDrawerNavigator(
     {
         Shop: ShopNavigator,
         Orders: OrdersNavigator,
+        Admin: AdminNavigator,
         CustomDrawerContentComponent: CustomDrawerContentComponent
     },
     {
