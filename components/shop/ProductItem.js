@@ -1,12 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
 import { useSelector } from 'react-redux';
-import Colors from '../../constants/Colors';
-
 const ProductItem = props => {
-    const cartItems = useSelector(state => state.cart.items);
-    const isInCart = cartItems.hasOwnProperty(props.prod.id);
-
     let TouchableCmp = TouchableOpacity;
     if (Platform.OS === 'android' && Platform.Version >= 21) {
         TouchableCmp === TouchableNativeFeedback;
@@ -14,7 +9,7 @@ const ProductItem = props => {
     return (
         <View style={styles.prodItem}>
             <View style={styles.touchable}>
-                <TouchableCmp onPress={props.onViewDetail} useForeground>
+                <TouchableCmp onPress={props.onCardPress} useForeground>
                     <View>
                         <View style={styles.imageContainer}>
                             <Image source={{ uri: props.prod.imageUrl }} style={styles.image} />
@@ -24,8 +19,7 @@ const ProductItem = props => {
                             <Text style={styles.price}>{props.prod.price.toFixed(2)}</Text>
                         </View>
                         <View style={styles.actions}>
-                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title="View Details" onPress={props.onViewDetail} />
-                            <Button color={Platform.OS === 'android' ? Colors.accent : Colors.primary} title={isInCart ? "In Cart" : "Add to Cart"} onPress={props.onAddToCart} />
+                            {props.children}
                         </View>
                     </View>
                 </TouchableCmp>

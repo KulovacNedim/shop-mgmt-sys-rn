@@ -13,18 +13,25 @@ export default (state = initialState, action) => {
                 products: [...PRODUCTS.filter(prod => prod.categoryId === action.categoryId)],
             };
         case prodActions.UPDATE_PRODUCT:
-            // it suppose to be saved in db, since after category change products with default state is loaded again
-            const product = action.product;
-            const updatedProduct = {
-                ...product,
-                [action.field]: action.value
-            };
-            const index = state.products.findIndex(prod => prod.id === product.id);
+            const productIndex = state.products.findIndex(p => p.id === action.product.id);
             const updatedProducts = [...state.products];
-            updatedProducts[index] = updatedProduct;
+            updatedProducts[productIndex] = action.product;
+            console.log(action.product)
             return {
                 ...state,
                 products: updatedProducts
+            };
+        case prodActions.CREATE_PRODUCT:
+            const newProduct = action.product;
+            newProduct.id = new Date();
+            return {
+                ...state,
+                products: state.products.concat(newProduct)
+            };
+        case prodActions.DELETE_PRODUCT:
+            return {
+                ...state,
+                products: state.products.filter(p => p.id !== action.prodId)
             };
         default:
             return state;
